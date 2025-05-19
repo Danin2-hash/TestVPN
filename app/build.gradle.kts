@@ -8,6 +8,10 @@ android {
     namespace = "com.example.test"
     compileSdk = 35
 
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.1.1"
+    }
+
     defaultConfig {
         applicationId = "com.example.test"
         minSdk = 24
@@ -17,6 +21,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
 
     buildTypes {
         release {
@@ -33,6 +38,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+        jvmTarget = "1.8"
     }
     buildFeatures {
         compose = true
@@ -40,6 +46,8 @@ android {
 }
 
 dependencies {
+
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -56,4 +64,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation("androidx.compose.material3:material3:1.3.2")
+    implementation("androidx.compose.material3:material3-window-size-class:1.3.2")
+    implementation("androidx.compose.material3:material3-adaptive-navigation-suite:1.4.0-alpha14")
 }
